@@ -8,5 +8,10 @@ var questions = [
     question: "Pick 3",
     answers: ["1", "2", "3"],
     correct: "3"
+  } 
+   {
+    question: "Pick 3",
+    answers: ["1", "2", "3"],
+    correct: "3"
   }
 ];

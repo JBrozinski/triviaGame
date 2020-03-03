@@ -18,12 +18,13 @@ var timerEl = $("#timer"),
   choicesEl = $("#choices");
 
 var startBtn = $("#startBtn"),
-  submitBtn = $("#submitBtn");
-
+  submitBtn1 = $("#submitBtn1");
+submitBtn2 = $("#submitBtn2");
+submitBtn3 = $("#submitBtn3");
 var timerLeft, correct, incorrect, intervalId, qIndex;
 
 startBtn.on("click", startGame);
-submitBtn.on("click", checkAnswer);
+submitBtn1.on("click", checkAnswer);
 
 function startGame() {
   timerLeft = 30;
@@ -46,7 +47,7 @@ function displayQuestion(questionObj) {
   for (var i = 0; i < questionObj.answers.length; i++) {
     var div = $("<div>");
 
-    var choice = $("<input type='radio' name='hello' >");
+    var choice = $("<input type='radio' name='choice' >");
     choice.val(questionObj.answers[i]);
 
     var text = $("<span>");
@@ -59,8 +60,8 @@ function displayQuestion(questionObj) {
 }
 
 function checkAnswer() {
-  console.log("Check answer", questions[qIndex].correct)
-  console.log($("input[name='choice']:checked").val())
+  console.log("Check answer", questions[qIndex].correct);
+  console.log($("input[name='choice']:checked").val());
 }
 
 function endGame() {
