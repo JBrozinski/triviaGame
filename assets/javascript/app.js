@@ -9,6 +9,8 @@ console.log(questions);
 //             score card
 var startScreen = $("#startScreen"),
   gameScreen = $("#gameScreen"),
+  gameScreen2 = $("#gameScreen2"),
+  gameScreen3 = $("#gameScreen3"),
   scoreScreen = $("#scoreScreen");
 
 var timerEl = $("#timer"),
@@ -32,8 +34,11 @@ function startGame() {
   incorrect = 0;
   qIndex = 0;
 
-  gameScreen.show();
   startScreen.hide();
+  gameScreen.show();
+  gameScreen2.hide();
+  gameScreen3.hide();
+
   scoreScreen.hide();
 
   displayQuestion(questions[qIndex]);
