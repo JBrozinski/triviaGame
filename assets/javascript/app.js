@@ -27,6 +27,8 @@ var timerLeft, correct, incorrect, intervalId, qIndex;
 
 startBtn.on("click", startGame);
 submitBtn1.on("click", checkAnswer);
+submitBtn2.on("click", checkAnswer2);
+submitBtn3.on("click", checkAnswer3);
 
 function startGame() {
   timerLeft = 30;
@@ -76,11 +78,57 @@ function checkAnswer() {
   // make sure these screens only stay up for 3 sec
   //then load next question
   // might need to copypasta this function 3x for each submit button
+  startScreen.hide();
+  gameScreen.hide();
+  gameScreen2.show();
+  gameScreen3.hide();
+
+  scoreScreen.hide();
+}
+function checkAnswer2() {
+  console.log("Check answer", questions[qIndex].correct);
+  console.log($("input[name='choice']:checked").val());
+  // if correct add correct++, if incorrect add incorrect ++
+  // if (($("input[name='choice']:checked").val() = correct)) {
+  //   correct++;
+  // }
+  // if answer is correct load  <div id="correctScreen"
+  // if answer is correct load  <div id="incorrectScreen"
+  // make sure these screens only stay up for 3 sec
+  //then load next question
+  // might need to copypasta this function 3x for each submit button
+  startScreen.hide();
+  gameScreen.hide();
+  gameScreen2.hide();
+  gameScreen3.show();
+
+  scoreScreen.hide();
+}
+function checkAnswer3() {
+  console.log("Check answer", questions[qIndex].correct);
+  console.log($("input[name='choice']:checked").val());
+  // if correct add correct++, if incorrect add incorrect ++
+  // if (($("input[name='choice']:checked").val() = correct)) {
+  //   correct++;
+  // }
+  // if answer is correct load  <div id="correctScreen"
+  // if answer is correct load  <div id="incorrectScreen"
+  // make sure these screens only stay up for 3 sec
+  //then load next question
+  // might need to copypasta this function 3x for each submit button
+  startScreen.hide();
+  gameScreen.hide();
+  gameScreen2.hide();
+  gameScreen3.hide();
+
+  scoreScreen.show();
 }
 
 function endGame() {
   gameScreen.hide();
   startScreen.hide();
+  gameScreen2.hide();
+  gameScreen3.hide();
   scoreScreen.show();
 
   correctEl.text(correct);
@@ -100,6 +148,7 @@ function startTimer() {
     }
   }, 1 * 1000);
 }
+
 // functions -     populate questions and answers
 //                 start Game and Timer
 // //                 timer stops Game
