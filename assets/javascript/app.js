@@ -67,6 +67,15 @@ function displayQuestion(questionObj) {
 function checkAnswer() {
   console.log("Check answer", questions[qIndex].correct);
   console.log($("input[name='choice']:checked").val());
+  // if correct add correct++, if incorrect add incorrect ++
+  // if (($("input[name='choice']:checked").val() = correct)) {
+  //   correct++;
+  // }
+  // if answer is correct load  <div id="correctScreen"
+  // if answer is correct load  <div id="incorrectScreen"
+  // make sure these screens only stay up for 3 sec
+  //then load next question
+  // might need to copypasta this function 3x for each submit button
 }
 
 function endGame() {
