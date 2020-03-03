@@ -84,6 +84,7 @@ function checkAnswer() {
   gameScreen3.hide();
 
   scoreScreen.hide();
+  // displayQuestion(questions[qIndex]);<--doesnt work because it prints question to "choiceEl" which is in game screen 1. need to create a new element choiceEl2 for gamescreen 2 etc...
 }
 function checkAnswer2() {
   console.log("Check answer", questions[qIndex].correct);
