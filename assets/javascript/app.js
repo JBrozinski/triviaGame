@@ -115,7 +115,7 @@ function displayQuestion3(questionObj) {
 function checkAnswer() {
   console.log("correct answer", questions[0].correct);
   console.log($("input[name='choice']:checked").val());
-  if (chosenAnswer === questions[0].correct) {
+  if (chosenAnswer === questions[qIndex].correct) {
     correct++;
   }
   console.log(correct);
