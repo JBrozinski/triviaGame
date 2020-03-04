@@ -28,6 +28,8 @@ submitBtn1.on("click", checkAnswer);
 submitBtn2.on("click", checkAnswer2);
 submitBtn3.on("click", checkAnswer3);
 
+var chosenAnswer = $("input[name='choice']:checked");
+
 function startGame() {
   timerLeft = 30;
   correct = 0;
@@ -111,11 +113,12 @@ function displayQuestion3(questionObj) {
 }
 
 function checkAnswer() {
-  console.log("Check answer", questions[0].correct);
+  console.log("correct answer", questions[0].correct);
   console.log($("input[name='choice']:checked").val());
-  if ($("input[name='choice']:checked").val === questions[0].correct) {
-    correctEl++;
+  if (chosenAnswer === questions[0].correct) {
+    correct++;
   }
+  console.log(correct);
   // if correct add correct++, if incorrect add incorrect ++
   // if (($("input[name='choice']:checked").val() = correct)) {
   //   correct++;
@@ -135,7 +138,7 @@ function checkAnswer() {
   // displayQuestion(questions[qIndex]);<--doesnt work because it prints question to "choiceEl" which is in game screen 1. need to create a new element choiceEl2 for gamescreen 2 etc...
 }
 function checkAnswer2() {
-  console.log("Check answer", questions[1].correct);
+  console.log("correct answer", questions[1].correct);
   console.log($("input[name='choice']:checked").val());
   // if correct add correct++, if incorrect add incorrect ++
   // if (($("input[name='choice']:checked").val() = correct)) {
@@ -155,7 +158,7 @@ function checkAnswer2() {
   displayQuestion3(questions[2]);
 }
 function checkAnswer3() {
-  console.log("Check answer", questions[2].correct);
+  console.log("correct answer", questions[2].correct);
   console.log($("input[name='choice']:checked").val());
 
   // if correct add correct++, if incorrect add incorrect ++
@@ -180,6 +183,7 @@ function endGame() {
   startScreen.hide();
   gameScreen2.hide();
   gameScreen3.hide();
+  timerEl.hide();
   scoreScreen.show();
 
   correctEl.text(correct);
