@@ -28,8 +28,6 @@ submitBtn1.on("click", checkAnswer);
 submitBtn2.on("click", checkAnswer2);
 submitBtn3.on("click", checkAnswer3);
 
-var chosenAnswer = $("input[name='choice']:checked");
-
 function startGame() {
   timerLeft = 30;
   correct = 0;
@@ -113,12 +111,16 @@ function displayQuestion3(questionObj) {
 }
 
 function checkAnswer() {
+  chosenAnswer = $("input[name='choice']:checked").val();
   console.log("correct answer", questions[0].correct);
   console.log($("input[name='choice']:checked").val());
   if (chosenAnswer === questions[qIndex].correct) {
     correct++;
+  } else {
+    incorrect++;
   }
   console.log(correct);
+  console.log(incorrect);
   // if correct add correct++, if incorrect add incorrect ++
   // if (($("input[name='choice']:checked").val() = correct)) {
   //   correct++;
@@ -140,6 +142,13 @@ function checkAnswer() {
 function checkAnswer2() {
   console.log("correct answer", questions[1].correct);
   console.log($("input[name='choice']:checked").val());
+  if (chosenAnswer === questions[qIndex].correct) {
+    correct++;
+  } else {
+    incorrect++;
+  }
+  console.log(correct);
+  console.log(incorrect);
   // if correct add correct++, if incorrect add incorrect ++
   // if (($("input[name='choice']:checked").val() = correct)) {
   //   correct++;
@@ -160,6 +169,13 @@ function checkAnswer2() {
 function checkAnswer3() {
   console.log("correct answer", questions[2].correct);
   console.log($("input[name='choice']:checked").val());
+  if (chosenAnswer === questions[qIndex].correct) {
+    correct++;
+  } else {
+    incorrect++;
+  }
+  console.log(correct);
+  console.log(incorrect);
 
   // if correct add correct++, if incorrect add incorrect ++
   // if (($("input[name='choice']:checked").val() = correct)) {
@@ -176,6 +192,7 @@ function checkAnswer3() {
   gameScreen3.hide();
 
   scoreScreen.show();
+  endGame();
 }
 
 function endGame() {
