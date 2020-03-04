@@ -6,14 +6,15 @@ var startScreen = $("#startScreen"),
   gameScreen2 = $("#gameScreen2"),
   gameScreen3 = $("#gameScreen3"),
   scoreScreen = $("#scoreScreen");
-
-var timerEl = $("#timer"),
-  incorrectEl = $("#incorrect"),
-  correctEl = $("#correct"),
-  questionEl = $("#question"),
-  questionEl2 = $("#question2"),
-  questionEl3 = $("#question3"),
-  choicesEl = $("#choices");
+(correctScreen = $("#correctScreen")),
+  (incorrectScreen = $("#incorrectScreen")),
+  (timerEl = $("#timer")),
+  (incorrectEl = $("#incorrect")),
+  (correctEl = $("#correct")),
+  (questionEl = $("#question")),
+  (questionEl2 = $("#question2")),
+  (questionEl3 = $("#question3")),
+  (choicesEl = $("#choices"));
 choicesEl2 = $("#choices2");
 choicesEl3 = $("#choices3");
 
@@ -56,6 +57,34 @@ function startTimer() {
       endGame();
     }
   }, 1 * 1000);
+}
+// function that displays correctScreen for 2 seconds
+function correctScreenShow() {
+  startScreen.hide();
+  gameScreen.hide();
+  gameScreen2.hide();
+  gameScreen3.hide();
+
+  scoreScreen.hide();
+  correctScreen.show();
+
+  setTimeout(correctScreenHide, 2000);
+}
+function correctScreenHide() {
+  correctScreen.hide();
+}
+function incorrectScreenShow() {
+  startScreen.hide();
+  gameScreen.hide();
+  gameScreen2.hide();
+  gameScreen3.hide();
+
+  scoreScreen.hide();
+  incorrectScreen.show();
+  setTimeout(incorrectScreenHide, 2000);
+}
+function incorrectScreenHide() {
+  incorrectScreen.hide();
 }
 // var questionObj = value passed to function call
 // var questionObj === questions[qIndex]
@@ -116,8 +145,10 @@ function checkAnswer() {
   console.log($("input[name='choice']:checked").val());
   if (chosenAnswer === questions[qIndex].correct) {
     correct++;
+    correctScreenShow();
   } else {
     incorrect++;
+    incorrectScreenShow();
   }
   console.log(correct);
   console.log(incorrect);
@@ -136,7 +167,7 @@ function checkAnswer() {
   gameScreen3.hide();
 
   scoreScreen.hide();
-  displayQuestion2(questions[1]);
+  setTimeout(displayQuestion2(questions[1]), 2000);
   // displayQuestion(questions[qIndex]);<--doesnt work because it prints question to "choiceEl" which is in game screen 1. need to create a new element choiceEl2 for gamescreen 2 etc...
 }
 function checkAnswer2() {
@@ -145,8 +176,10 @@ function checkAnswer2() {
   console.log($("input[name='choice']:checked").val());
   if (chosenAnswer === questions[1].correct) {
     correct++;
+    correctScreenShow();
   } else {
     incorrect++;
+    incorrectScreenShow();
   }
   console.log(correct);
   console.log(incorrect);
@@ -173,8 +206,10 @@ function checkAnswer3() {
   console.log($("input[name='choice']:checked").val());
   if (chosenAnswer === questions[2].correct) {
     correct++;
+    correctScreenShow();
   } else {
     incorrect++;
+    incorrectScreenShow();
   }
   console.log(correct);
   console.log(incorrect);
