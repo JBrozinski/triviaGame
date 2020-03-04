@@ -11,7 +11,11 @@ var timerEl = $("#timer"),
   incorrectEl = $("#incorrect"),
   correctEl = $("#correct"),
   questionEl = $("#question"),
+  questionEl2 = $("#question2"),
+  questionEl3 = $("#question3"),
   choicesEl = $("#choices");
+choicesEl2 = $("#choices2");
+choicesEl3 = $("#choices3");
 
 var startBtn = $("#startBtn"),
   submitBtn1 = $("#submitBtn1");
@@ -58,7 +62,7 @@ function startTimer() {
 function displayQuestion(questionObj) {
   questionEl.text(questionObj.question);
   for (var i = 0; i < questionObj.answers.length; i++) {
-    var div = $("<div>");
+    var div = $("#choices");
 
     var choice = $("<input type='radio' name='choice' >");
     choice.val(questionObj.answers[i]);
@@ -73,9 +77,9 @@ function displayQuestion(questionObj) {
 }
 
 function displayQuestion2(questionObj) {
-  questionEl.text(questionObj.question);
+  questionEl2.text(questionObj.question);
   for (var i = 0; i < questionObj.answers.length; i++) {
-    var div2 = $("#question2");
+    var div2 = $("#choices2");
 
     var choice = $("<input type='radio' name='choice' >");
     choice.val(questionObj.answers[i]);
@@ -84,8 +88,8 @@ function displayQuestion2(questionObj) {
     text.text(questionObj.answers[i]);
     text.addClass("ml-2");
 
-    div.append(choice, text);
-    choicesEl.append(div);
+    div2.append(choice, text);
+    choicesEl2.append(div2);
   }
 }
 function checkAnswer() {
