@@ -1,17 +1,17 @@
 var questions = [
   {
-    question: "Pick B",
-    answers: ["A", "B", "C"],
-    correct: "B"
+    question: "Guess the NBA player's nick name: Giannis Antetokounmpo",
+    answers: ["Big G", "The Greek Freak", "Mr. MVP"],
+    correct: "The Greek Freak"
   },
   {
-    question: "Pick 3",
-    answers: ["1", "2", "3"],
-    correct: "3"
+    question: "Guess the NBA player's nick name: Kawhi Leonard",
+    answers: ["Lenny and the Jets", "Lizard Hawk", "The Claw"],
+    correct: "The Claw"
   },
   {
-    question: "Pick 3",
-    answers: ["1", "2", "3"],
+    question: "Guess the NBA player's nick name: Nikola Jokic",
+    answers: ["Big Honey", "Serbian Thunder", "the Boiled Potato"],
     correct: "3"
   }
 ];

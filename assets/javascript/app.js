@@ -128,11 +128,11 @@ function checkAnswer() {
   gameScreen3.hide();
 
   scoreScreen.hide();
-  displayQuestion2(questions[qIndex]);
+  displayQuestion2(questions[1]);
   // displayQuestion(questions[qIndex]);<--doesnt work because it prints question to "choiceEl" which is in game screen 1. need to create a new element choiceEl2 for gamescreen 2 etc...
 }
 function checkAnswer2() {
-  console.log("Check answer", questions[qIndex].correct);
+  console.log("Check answer", questions[1].correct);
   console.log($("input[name='choice']:checked").val());
   // if correct add correct++, if incorrect add incorrect ++
   // if (($("input[name='choice']:checked").val() = correct)) {
@@ -149,10 +149,10 @@ function checkAnswer2() {
   gameScreen3.show();
 
   scoreScreen.hide();
-  displayQuestion3(questions[qIndex]);
+  displayQuestion3(questions[2]);
 }
 function checkAnswer3() {
-  console.log("Check answer", questions[qIndex].correct);
+  console.log("Check answer", questions[2].correct);
   console.log($("input[name='choice']:checked").val());
   // if correct add correct++, if incorrect add incorrect ++
   // if (($("input[name='choice']:checked").val() = correct)) {
