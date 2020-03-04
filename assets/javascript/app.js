@@ -140,9 +140,10 @@ function checkAnswer() {
   // displayQuestion(questions[qIndex]);<--doesnt work because it prints question to "choiceEl" which is in game screen 1. need to create a new element choiceEl2 for gamescreen 2 etc...
 }
 function checkAnswer2() {
+  chosenAnswer = $("input[name='choice']:checked").val();
   console.log("correct answer", questions[1].correct);
   console.log($("input[name='choice']:checked").val());
-  if (chosenAnswer === questions[qIndex].correct) {
+  if (chosenAnswer === questions[1].correct) {
     correct++;
   } else {
     incorrect++;
@@ -167,9 +168,10 @@ function checkAnswer2() {
   displayQuestion3(questions[2]);
 }
 function checkAnswer3() {
+  chosenAnswer = $("input[name='choice']:checked").val();
   console.log("correct answer", questions[2].correct);
   console.log($("input[name='choice']:checked").val());
-  if (chosenAnswer === questions[qIndex].correct) {
+  if (chosenAnswer === questions[2].correct) {
     correct++;
   } else {
     incorrect++;
