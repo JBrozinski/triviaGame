@@ -92,6 +92,24 @@ function displayQuestion2(questionObj) {
     choicesEl2.append(div2);
   }
 }
+
+function displayQuestion3(questionObj) {
+  questionEl3.text(questionObj.question);
+  for (var i = 0; i < questionObj.answers.length; i++) {
+    var div3 = $("#choices3");
+
+    var choice = $("<input type='radio' name='choice' >");
+    choice.val(questionObj.answers[i]);
+
+    var text = $("<span>");
+    text.text(questionObj.answers[i]);
+    text.addClass("ml-2");
+
+    div3.append(choice, text);
+    choicesEl3.append(div3);
+  }
+}
+
 function checkAnswer() {
   console.log("Check answer", questions[qIndex].correct);
   console.log($("input[name='choice']:checked").val());
@@ -131,6 +149,7 @@ function checkAnswer2() {
   gameScreen3.show();
 
   scoreScreen.hide();
+  displayQuestion3(questions[qIndex]);
 }
 function checkAnswer3() {
   console.log("Check answer", questions[qIndex].correct);
