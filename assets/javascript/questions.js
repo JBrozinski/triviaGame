@@ -12,6 +12,6 @@ var questions = [
   {
     question: "Guess the NBA player's nick name: Nikola Jokic",
     answers: ["Big Honey", "Serbian Thunder", "the Boiled Potato"],
-    correct: "3"
+    correct: "Big Honey"
   }
 ];

@@ -111,8 +111,11 @@ function displayQuestion3(questionObj) {
 }
 
 function checkAnswer() {
-  console.log("Check answer", questions[qIndex].correct);
+  console.log("Check answer", questions[0].correct);
   console.log($("input[name='choice']:checked").val());
+  if ($("input[name='choice']:checked").val === questions[0].correct) {
+    correctEl++;
+  }
   // if correct add correct++, if incorrect add incorrect ++
   // if (($("input[name='choice']:checked").val() = correct)) {
   //   correct++;
@@ -154,6 +157,7 @@ function checkAnswer2() {
 function checkAnswer3() {
   console.log("Check answer", questions[2].correct);
   console.log($("input[name='choice']:checked").val());
+
   // if correct add correct++, if incorrect add incorrect ++
   // if (($("input[name='choice']:checked").val() = correct)) {
   //   correct++;
